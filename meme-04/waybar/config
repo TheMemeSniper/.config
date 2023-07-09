@@ -1,0 +1,205 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"sway/workspaces",
+		"user",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"battery",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"backlight",
+		"custom/right-arrow-dark"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"network",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"bluetooth",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"temperature",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+    ],
+		"on-scroll-up": "light -A 5",
+		"on-scroll-down": "light -U 5",
+		"on-click": "light -S 50",
+		"scroll-step": 5
+	},
+	"user": {
+        "format": "  (up {work_H}:{work_M}:{work_S} ↑)",
+        "interval": 1,
+        "height": 30,
+        "width": 30,
+        "icon": true
+},
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%I:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+	"bluetooth": {
+		"format": "",
+    "format-off": "",
+		"format-connected": "",
+		"format-connected-battery": [
+    "󰤾",
+    "󰤿",
+    "󰥀",
+    "󰥁",
+    "󰥂",
+    "󰥃",
+    "󰥄",
+    "󰥅",
+    "󰥆",
+    "󰥈"
+    ],
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{volume}%",
+		"format-muted": "󰝟",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				"󰖀",
+        "󰕾"
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": " {}%"
+	},
+	"disk": {
+		"interval": 30,
+		"format": " {percentage_used}%",
+		"path": "/"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "󰻠 {usage:2}%"
+	},
+	"battery": {
+		"bat": "BAT1",
+		"states": {
+			"good": 95,
+			"warning": 19,
+			"critical": 10
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+    "format-charging": "󱐋 {icon}  {capacity}%",
+	},
+	"network": {
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": ["󰤯 ", "󰤟 " ,"󰤢 ", "󰤥 " ,"󰤨 "],
+            "ethernet": [""],
+            "disconnected": ["󰖪"]
+        },
+        "on-click": "kitty -e nmtui",
+    "tooltip": false
+    },
+	"temperature": {
+		"format": "{icon} {temperatureC}°C",
+    "critical-threshold": 80,
+    "format-icons": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "󰸁"
+    ]
+	},
+	"tray": {
+		"icon-size": 20,
+		"interval": 5
+	}
+}

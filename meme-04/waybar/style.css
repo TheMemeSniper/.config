@@ -1,0 +1,133 @@
+* {
+	font-size: 20px;
+	font-family: Terminess Nerd Font;
+}
+
+window#waybar {
+	background: #292c3c;
+	color: #c6d0f5;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: #292c3c;
+	background: #1a1a1a;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#bluetooth,
+#cpu,
+#battery,
+#temperature,
+#disk,
+#tray,
+#user,
+#backlight,
+#network {
+	background: #1a1a1a;
+}
+
+#temperature.critical {
+  color: #c6d0f5;
+  animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+  animation-name: blink-fuck;
+}
+
+#workspaces button.urgent {
+  animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+  animation-name: blink-fuck;
+}
+
+#battery.critical {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-fuck;
+}
+
+#battery.warning {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-shit;
+}
+#workspaces button {
+	padding: 0 2px;
+	color: #c6d0f5;
+}
+#workspaces button.focused {
+	color: #eeff00;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
+}
+
+#pulseaudio,
+#bluetooth {
+	color: #8caaee;
+}
+#memory {
+	color: #81c8be;
+}
+#cpu {
+	color: #babbf1;
+}
+#battery {
+	color: #a6d189;
+}
+#temperature {
+	color: #ef9f76;
+}
+#backlight {
+	color: #e5c890;
+}
+#disk {
+	color: #ca9ee6;
+}
+#network {
+	color: #e78284;
+}
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#temperature,
+#bluetooth,
+#user,
+#backlight,
+#network {
+	padding: 0 10px;
+}
+
+@keyframes blink-fuck {
+	from { background: #1a1a1a; }
+	/*to { background: #e78284; }*/
+  to { background: radial-gradient(circle, rgba(231,130,132,1) 0%, rgba(26,26,26,1) 90%); }
+}
+
+@keyframes blink-shit {
+	from { background: #1a1a1a; }
+	/*to { background: #e5c890; }*/
+  to { background: radial-gradient(circle, rgba(229,200,144,1) 0%, rgba(0,0,0,1) 90%); }
+}
